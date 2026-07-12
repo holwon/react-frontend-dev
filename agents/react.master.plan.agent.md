@@ -105,3 +105,10 @@ When receiving user input after presenting the plan:
 **Further Considerations** (If applicable, 1-3 items)
 1. {Clarification questions and suggestions. Option A / Option B / Option C}
 2. {…}
+```
+
+Rules:
+- No code blocks — describe the changes and link to files and specific symbols/functions.
+- Do not end with blocking questions — ask questions via `#tool:vscode/askQuestions` during the workflow.
+- The plan must be visually presented to the user; do not merely mention the plan file.
+</plan_style_guide>
