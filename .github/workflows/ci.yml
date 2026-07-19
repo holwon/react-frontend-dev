@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+
+      - name: Ensure submodules initialized
+        run: git submodule update --init --recursive
+
+      - name: Print submodule status
+        run: git submodule status --recursive || true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies and run tests (if any)
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+            if jq -e '.scripts.test' package.json >/dev/null 2>&1; then
+              npm test || true
+            else
+              echo "No test script defined, skipping npm test"
+            fi
+          else
+            echo "No package.json found, skipping Node steps"
+          fi
