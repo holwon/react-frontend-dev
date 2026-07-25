@@ -13,8 +13,7 @@ Hard rules — enforced every time state management or data fetching is introduc
    - **Global Client State**: MUST be managed using Zustand or Jotai. Covers app themes, active user session UI state, sidebar toggles, modal queues.
    - **Local Component State**: MUST use native `useState` / `useReducer` or React Context (for shallow subtree state).
 2. **FORBIDDEN State Anti-Patterns**:
-   - **NEVER** mirror server data inside Zustand / Redux stores. Query cache is the single source of truth for server state.
-   - **NEVER** use global Redux / Redux Toolkit for pure server API data fetching.
+   - **NEVER** mirror server data inside Zustand stores. Query cache is the single source of truth for server state.
    - **NEVER** put non-serializable objects (DOM nodes, class instances with methods) into Zustand or React Query state.
 3. **Data Fetching Hooks**:
    - Custom Query hooks MUST follow naming pattern `use[Entity]Query` or `use[Action][Entity]Mutation`.
