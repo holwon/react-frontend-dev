@@ -10,7 +10,7 @@ Hard rules — enforced every time you design, write, or refactor React componen
 
 1. **Component Separation**: Distinguish strictly between Presentational (UI-only, stateless/local UI state) and Container (smart, hook-integrated) components.
 2. **Custom Hooks Extraction**: Extract complex interaction, async, or form logic into custom Hooks (e.g., `use[Feature]Form`, `use[Feature]Actions`). Component files MUST focus primarily on JSX layout.
-3. **Props Boundary**: Props interface SHOULD NOT exceed 7 properties. If a component requires more props, group related fields into composite object types or use React Context for deeply nested trees. Beyond ~7 props, a component becomes hard to read, test, and memoize effectively.
+3. **Props Boundary**: Props interface SHOULD NOT exceed 7 properties. If a component requires more props, group related fields into composite object types or use React Context for deeply nested trees.
 4. **React 19 Standards**:
    - Prefer React 19 native primitives (`use`, `useActionState`, `useOptimistic`) where appropriate.
    - Do NOT use legacy lifecycle methods or class components.
