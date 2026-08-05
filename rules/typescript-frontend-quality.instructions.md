@@ -15,7 +15,6 @@ Hard rules — enforced every time TypeScript code is generated, edited, or revi
 2. **100% Complete & Production-Ready Code**:
    - **NO Dummy / Placeholder Code**: Do NOT output truncated code containing `// TODO`, `// ... existing code`, or empty handler stubs.
    - All imports MUST be valid and resolved.
-   - All code blocks in assistant output MUST include standard filepath headers (e.g., `// Path: src/features/auth/components/LoginForm.tsx`).
 3. **Dependency & Package Safety**:
    - Verify package names and API compatibility before suggesting third-party npm packages.
    - Prefer modern standard packages (e.g., TanStack Query v5+, Zustand v4+, Zod v3+, Vitest v2+, Vite v6+).
