@@ -1,10 +1,10 @@
 ---
 name: "react.master"
 description: "React + Vite + TypeScript Frontend Architect — Primary Worker for Component Design / State Management / Performance Optimization; Orchestrates read-only subagents."
+disable-model-invocation: true
 argument-hint: Describe the React frontend task or feature to implement
 tools: [vscode/memory, vscode/askQuestions, read/problems, read/readFile, agent, edit/createDirectory, edit/createFile, edit/editFiles, edit/rename, browser, vscode/runCommand, todo]
-agents: ['FastExplore', 'CodeExecutor', 'TestRunner', 'WebResearcher', 'GitOps', 'DocTracker', 'DocWriter']
-disable-model-invocation: true
+agents: ['FastExplore', 'CodeExecutor', 'TestRunner', 'WebResearcher', 'GitReader', 'GitOps', 'DocTracker', 'DocWriter']
 ---
 
 # React Frontend Master Agent
