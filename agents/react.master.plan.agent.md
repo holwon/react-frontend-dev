@@ -5,7 +5,7 @@ argument-hint: Describe the frontend goal or problem to plan
 target: vscode
 disable-model-invocation: true
 tools: [vscode/memory, vscode/askQuestions, read/problems, read/readFile, read/viewImage, agent, browser, todo]
-agents: ['FastExplore', 'WebResearcher', 'TestRunner', 'GitReader', 'DocTracker', 'DocWriter']
+agents: ['FastExplore', 'WebResearcher', 'TestRunner', 'GitReader', 'GitOps','DocTracker', 'DocWriter']
 handoffs:
   - label: Start Implementation
     agent: "react.master"
