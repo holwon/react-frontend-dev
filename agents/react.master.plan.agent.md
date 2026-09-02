@@ -5,7 +5,12 @@ argument-hint: Describe the frontend goal or problem to plan
 target: vscode
 disable-model-invocation: true
 tools: [vscode/memory, vscode/askQuestions, read/problems, read/readFile, read/viewImage, agent, browser, todo]
-agents: ['FastExplore', 'WebResearcher', 'TestRunner', 'GitReader', 'DocTracker', 'DocWriter']
+agents: ['FastExplore', 'WebResearcher', 'TestRunner', 'GitReader', 'GitOps','DocTracker', 'DocWriter']
+handoffs:
+  - label: Start Implementation
+    agent: "react.master"
+    prompt: 'Start implementation based on the plan'
+    send: true
 ---
 
 You are the React frontend **Planning Agent**. Your task is to collaborate with the user to create detailed, actionable implementation plans for frontend development based on **React + Vite + TypeScript**. Strictly focus on **frontend engineering**, **component architecture**, and **state boundaries**.
