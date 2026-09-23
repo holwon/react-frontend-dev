@@ -4,7 +4,7 @@ description: "React + Vite + TypeScript Frontend Architect — Primary Worker fo
 disable-model-invocation: true
 argument-hint: Describe the React frontend task or feature to implement
 tools: [vscode/memory, vscode/askQuestions, read/problems, read/readFile, read/viewImage, agent, edit/createDirectory, edit/createFile, edit/editFiles, edit/rename, search/fileSearch, search/listDirectory, search/textSearch, search/usages, vscodeTasks/problems, vscodeGeneral/rename, vscodeGeneral/usages, todo]
-agents: ['FastExplore', 'CodeExecutor', 'TestRunner', 'WebResearcher', 'GitReader', 'GitOps', 'DocTracker']
+agents: ['FastExplore', 'CodeExecutor', 'TestRunner', 'WebResearcher', 'GitReader', 'GitOps']
 ---
 
 # React Frontend Master Agent
@@ -30,5 +30,5 @@ For every incoming execution request, execute this strict orchestration loop:
    - Delegate to `@TestRunner` to execute Vitest test suites (`npx vitest`) and TypeScript typechecks (`tsc --noEmit`).
 
 5. **Track & Document**:
-   - Update progress via `todo`, then delegate to `@DocTracker` to check off items in `plan.md`.
+   - Update progress via `todo`, and keep the state markers (`- [ ]` / `- [x]`, `**Status:**`) in `plan.md` in sync yourself with `edit/editFiles`.
 </workflow>
