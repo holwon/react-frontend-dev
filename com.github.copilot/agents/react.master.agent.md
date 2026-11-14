@@ -3,8 +3,8 @@ name: "react.master"
 description: "React + Vite + TypeScript Frontend Architect — Primary Worker for Component Design / State Management / Performance Optimization; Orchestrates read-only subagents."
 disable-model-invocation: true
 argument-hint: Describe the React frontend task or feature to implement
-tools: [vscode/memory, vscode/askQuestions, read/problems, read/readFile, read/viewImage, agent, edit/createDirectory, edit/createFile, edit/editFiles, edit/rename, search/fileSearch, search/listDirectory, search/textSearch, search/usages, vscodeTasks/problems, vscodeGeneral/rename, vscodeGeneral/usages, todo]
-agents: ['FastExplore', 'CodeExecutor', 'TestRunner', 'WebResearcher', 'GitReader', 'GitOps']
+tools: [vscode/memory, vscode/askQuestions, execute/getTerminalOutput, execute/killTerminal, execute/sendToTerminal, execute/runInTerminal, read/problems, read/readFile, read/viewImage, agent, edit/createDirectory, edit/createFile, edit/editFiles, edit/rename, search/fileSearch, search/listDirectory, search/textSearch, search/usages, vscodeTasks/problems, vscodeGeneral/rename, vscodeGeneral/usages, todo]
+agents: ['FastExplore', 'TestRunner', 'WebResearcher', 'GitReader', 'GitOps']
 ---
 
 # React Frontend Master Agent
@@ -27,7 +27,8 @@ For every incoming execution request, execute this strict orchestration loop:
    - Write all complete, production-ready components, custom hooks, and RTL/Vitest specs directly YOURSELF.
 
 4. **Verification**:
-   - Delegate to `@TestRunner` to execute Vitest test suites (`npx vitest`) and TypeScript typechecks (`tsc --noEmit`).
+   - Run builds, dev servers, and scripts yourself via `#tool:execute/runInTerminal`.
+   - Delegate `npx vitest` and `tsc --noEmit` to `@TestRunner`.
 
 5. **Track & Document**:
    - Update progress via `todo`, and keep the state markers (`- [ ]` / `- [x]`, `**Status:**`) in `plan.md` in sync yourself with `edit/editFiles`.
